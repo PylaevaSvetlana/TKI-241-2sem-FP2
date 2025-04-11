@@ -1,6 +1,9 @@
 #include <iostream>
 #include <deque>
-#include<algorithm>
+#include <algorithm>
+
+void Print(std::deque<int> deq);
+
 int main()
 {
     std::setlocale(LC_ALL, "RU");
@@ -8,11 +11,7 @@ int main()
     std::deque<int> deq = { 1, 2, 3, 4, 5, 6, 7, 8 ,9,10,11,12 };
 
     std::cout << "Исходный дек:" << std::endl;
-    for (auto elem : deq)
-    {
-        std::cout << elem << " ";
-    }
-    std::cout << std::endl;
+    Print(deq);
 
     if (deq.size() % 4 != 0)
     {
@@ -30,11 +29,16 @@ int main()
     result_deq.insert(result_deq.begin(), deq1.begin(), deq1.end());
 
     std::cout << "Преобразованный дек:" << std::endl;
-    for (auto elem : result_deq)
+    Print(result_deq);
+
+    return 0;
+}
+
+void Print(std::deque<int> deq)
+{
+    for (auto elem : deq)
     {
         std::cout << elem << " ";
     }
     std::cout << std::endl;
-
-    return 0;
 }
